@@ -268,12 +268,10 @@ generate_micro() {
     print_step "Generating Micro colorscheme..."
     
     cat > "$SCRIPT_DIR/micro/colorschemes/obsidian-tyrian.micro" << EOF
-// =============================================================================
-// Micro Colorscheme - Auto-generated from colors.sh
-// =============================================================================
-// Run ./generate-themes.sh to regenerate this file
+# Micro Colorscheme - Obsidian Tyrian
+# Auto-generated from colors.sh - Run ./generate-themes.sh to regenerate
 
-// EDITOR UI
+# EDITOR UI
 color-link default "#${TEXT_PRIMARY},#${BASE}"
 color-link line-number "#${TEXT_MUTED},#${MANTLE}"
 color-link current-line-number "#${FOCUS},#${SURFACE}"
@@ -294,7 +292,7 @@ color-link error-message "#${ERROR}"
 color-link match-brace "#${FOCUS},#${SURFACE_HIGHLIGHT}"
 color-link hlsearch "#${BASE},#${FOCUS}"
 
-// SYNTAX HIGHLIGHTING
+# SYNTAX HIGHLIGHTING
 color-link comment "#${TEXT_MUTED},italic"
 color-link constant.string "#${SUCCESS}"
 color-link constant.string.char "#${SUCCESS}"

@@ -1,9 +1,7 @@
-// =============================================================================
-// Micro Colorscheme - Auto-generated from colors.sh
-// =============================================================================
-// Run ./generate-themes.sh to regenerate this file
+# Micro Colorscheme - Obsidian Tyrian
+# Auto-generated from colors.sh - Run ./generate-themes.sh to regenerate
 
-// EDITOR UI
+# EDITOR UI
 color-link default "#E5E4E2,#1B1B1B"
 color-link line-number "#919191,#161616"
 color-link current-line-number "#F7E7CE,#202020"
@@ -24,7 +22,7 @@ color-link error-message "#8B2F3A"
 color-link match-brace "#F7E7CE,#353535"
 color-link hlsearch "#1B1B1B,#F7E7CE"
 
-// SYNTAX HIGHLIGHTING
+# SYNTAX HIGHLIGHTING
 color-link comment "#919191,italic"
 color-link constant.string "#2F6F6B"
 color-link constant.string.char "#2F6F6B"
