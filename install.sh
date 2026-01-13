@@ -195,28 +195,53 @@ check_dependencies() {
     
     # All required packages
     local packages=(
+        # Core WM
         "hyprland"
         "hyprlock"
         "hypridle"
         "xdg-desktop-portal-hyprland"
+        
+        # Bar & Launcher
         "waybar"
         "rofi-wayland"
+        
+        # Notifications
         "dunst"
+        
+        # Terminal & Shell
         "wezterm"
+        "zsh"
         "starship"
-        "swww"
+        
+        # File Manager
         "yazi"
+        
+        # Editor
         "micro"
+        
+        # Wallpaper
+        "swww"
+        
+        # Screenshot
         "hyprshot"
         "swappy"
         "grim"
         "slurp"
+        
+        # Clipboard
         "wl-clipboard"
         "cliphist"
+        
+        # Auth
         "polkit"
         "polkit-gnome"
+        
+        # Fonts
         "ttf-jetbrains-mono"
         "ttf-jetbrains-mono-nerd"
+        
+        # Browser
+        "firefox"
     )
     
     print_step "Checking installed packages..."
