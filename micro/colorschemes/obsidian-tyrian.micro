@@ -1,0 +1,91 @@
+// =============================================================================
+// Micro Colorscheme - Obsidian · Sapphire · Tyrian Theme
+// =============================================================================
+//
+// Place this file in ~/.config/micro/colorschemes/
+// Then set: micro --option colorscheme=obsidian-tyrian
+// Or add to ~/.config/micro/settings.json: "colorscheme": "obsidian-tyrian"
+//
+// Documentation: https://github.com/zyedidia/micro/blob/master/runtime/help/colors.md
+// =============================================================================
+
+// Palette Reference:
+// Obsidian #1B1B1B | Carbon #202020 | Graphite #2A2A2A | Slate #353535
+// Platinum #E5E4E2 | Silver #C6C6C6 | Steel #919191
+// Amethyst #550255 | Tyrian #791B4D | Sapphire #0F52BA
+// Gold #F7E7CE | Teal #2F6F6B | Crimson #8B2F3A
+
+// =============================================================================
+// EDITOR UI
+// =============================================================================
+
+color-link default "#E5E4E2,#1B1B1B"
+color-link line-number "#919191,#161616"
+color-link current-line-number "#F7E7CE,#202020"
+color-link cursor-line "#202020"
+color-link selection "#E5E4E2,#353535"
+color-link statusline "#E5E4E2,#202020"
+color-link tabbar "#919191,#161616"
+color-link indent-char "#474747"
+color-link gutter-error "#8B2F3A"
+color-link gutter-warning "#F7E7CE"
+color-link diff-added "#2F6F6B"
+color-link diff-modified "#0F52BA"
+color-link diff-deleted "#8B2F3A"
+color-link scrollbar "#474747"
+color-link divider "#474747"
+color-link message "#C6C6C6"
+color-link error-message "#8B2F3A"
+color-link match-brace "#F7E7CE,#353535"
+color-link hlsearch "#1B1B1B,#F7E7CE"
+
+// =============================================================================
+// SYNTAX HIGHLIGHTING
+// =============================================================================
+
+// Comments
+color-link comment "#919191,italic"
+
+// Strings and characters
+color-link constant.string "#2F6F6B"
+color-link constant.string.char "#2F6F6B"
+color-link constant.string.url "#0F52BA,underline"
+
+// Numbers and booleans
+color-link constant.number "#F7E7CE"
+color-link constant.bool "#F7E7CE"
+color-link constant.bool.true "#2F6F6B"
+color-link constant.bool.false "#8B2F3A"
+
+// Special/escape sequences
+color-link constant.specialChar "#791B4D"
+
+// Keywords (if, else, for, while, etc.)
+color-link statement "#550255,bold"
+
+// Identifiers (variables, function names)
+color-link identifier "#C6C6C6"
+color-link identifier.class "#0F52BA,bold"
+color-link identifier.var "#C6C6C6"
+
+// Types
+color-link type "#0F52BA"
+color-link type.keyword "#550255,bold"
+
+// Special symbols, operators
+color-link symbol "#791B4D"
+color-link symbol.operator "#791B4D"
+color-link symbol.brackets "#C6C6C6"
+color-link symbol.tag "#550255"
+
+// Preprocessor directives
+color-link preproc "#791B4D"
+
+// Markdown/markup specific
+color-link constant.string.url "#0F52BA,underline"
+color-link type.extended "#550255"
+
+// Special
+color-link special "#F7E7CE"
+color-link underlined "#0F52BA,underline"
+color-link todo "#F7E7CE,bold,#353535"

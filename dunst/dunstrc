@@ -1,0 +1,95 @@
+# =============================================================================
+# Dunst Configuration - Obsidian · Sapphire · Tyrian Theme
+# =============================================================================
+#
+# Notification daemon configuration
+# Documentation: https://dunst-project.org/documentation/
+# =============================================================================
+
+[global]
+    # Display settings
+    monitor = 0
+    follow = mouse
+
+    # Geometry: width x height, offset from corner
+    width = 350
+    height = (0, 300)
+    origin = top-right
+    offset = 20x20
+
+    # Appearance
+    transparency = 10
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 2
+    frame_color = "#550255"             # Imperial Amethyst
+    separator_height = 2
+    separator_color = frame
+
+    # Corner rounding
+    corner_radius = 10
+
+    # Font
+    font = JetBrains Mono 10
+
+    # Text
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    word_wrap = yes
+
+    # Icons
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+
+    # History
+    sticky_history = yes
+    history_length = 20
+
+    # Progress bar
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 5
+
+    # Misc
+    sort = yes
+    idle_threshold = 120
+    show_indicators = yes
+
+    # Mouse actions
+    mouse_left_click = close_current
+    mouse_middle_click = do_action
+    mouse_right_click = close_all
+
+# =============================================================================
+# URGENCY LEVELS
+# =============================================================================
+
+[urgency_low]
+    background = "#202020"              # Carbon
+    foreground = "#919191"              # Steel
+    frame_color = "#474747"             # Ash
+    timeout = 5
+    highlight = "#0F52BA"               # Sapphire
+
+[urgency_normal]
+    background = "#1B1B1B"              # Obsidian
+    foreground = "#E5E4E2"              # Platinum
+    frame_color = "#550255"             # Imperial Amethyst
+    timeout = 10
+    highlight = "#0F52BA"               # Sapphire
+
+[urgency_critical]
+    background = "#1B1B1B"              # Obsidian
+    foreground = "#E5E4E2"              # Platinum
+    frame_color = "#8B2F3A"             # Muted Crimson
+    timeout = 0                         # Don't auto-dismiss
+    highlight = "#8B2F3A"               # Muted Crimson

@@ -1,0 +1,113 @@
+# =============================================================================
+# Starship Prompt Configuration - Obsidian · Sapphire · Tyrian Theme
+# =============================================================================
+#
+# Documentation: https://starship.rs/config/
+# This prompt integrates with your zsh + oh-my-zsh setup
+#
+# INSTALL: Make sure starship init is in your .zshrc:
+#   eval "$(starship init zsh)"
+# =============================================================================
+
+# Prompt format - customize the order of modules
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$rust\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Timeout for commands that starship runs (ms)
+command_timeout = 500
+
+# =============================================================================
+# PALETTE
+# =============================================================================
+# Define colors as variables for easy theming
+
+palette = "obsidian_tyrian"
+
+[palettes.obsidian_tyrian]
+obsidian = "#1B1B1B"
+platinum = "#E5E4E2"
+silver = "#C6C6C6"
+steel = "#919191"
+amethyst = "#550255"
+tyrian = "#791B4D"
+sapphire = "#0F52BA"
+gold = "#F7E7CE"
+teal = "#2F6F6B"
+crimson = "#8B2F3A"
+
+# =============================================================================
+# MODULES
+# =============================================================================
+
+[character]
+# The prompt character changes based on last command success/failure
+success_symbol = "[❯](bold gold)"
+error_symbol = "[❯](bold crimson)"
+vimcmd_symbol = "[❮](bold sapphire)"
+
+[directory]
+# Show current directory
+style = "bold sapphire"
+truncation_length = 3
+truncate_to_repo = true
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " 󰌾"
+read_only_style = "crimson"
+
+[git_branch]
+style = "bold amethyst"
+format = "on [$symbol$branch]($style) "
+symbol = " "
+
+[git_status]
+style = "tyrian"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+# Show command execution time
+min_time = 2_000  # Show if command takes > 2 seconds
+style = "bold steel"
+format = "took [$duration]($style) "
+
+[python]
+style = "teal"
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
+
+[nodejs]
+style = "teal"
+format = "via [$symbol($version )]($style)"
+symbol = " "
+
+[rust]
+style = "tyrian"
+format = "via [$symbol($version )]($style)"
+symbol = " "
+
+# Disable modules you don't need (they're enabled by default)
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[azure]
+disabled = true

@@ -1,0 +1,134 @@
+/* =============================================================================
+   Rofi Configuration - Obsidian · Sapphire · Tyrian Theme
+   =============================================================================
+   
+   Application launcher and menu
+   Documentation: https://github.com/davatorium/rofi/wiki
+   ============================================================================= */
+
+configuration {
+    modi: "drun,run,filebrowser,window";
+    show-icons: true;
+    display-drun: " Apps";
+    display-run: " Run";
+    display-filebrowser: " Files";
+    display-window: " Windows";
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+    font: "JetBrains Mono 11";
+    terminal: "wezterm";
+}
+
+/* =============================================================================
+   THEME
+   ============================================================================= */
+
+* {
+    /* Color Palette */
+    obsidian:       #1B1B1B;
+    abyss:          #161616;
+    carbon:         #202020;
+    graphite:       #2A2A2A;
+    slate:          #353535;
+    ash:            #474747;
+    platinum:       #E5E4E2;
+    silver:         #C6C6C6;
+    steel:          #919191;
+    amethyst:       #550255;
+    tyrian:         #791B4D;
+    sapphire:       #0F52BA;
+    gold:           #F7E7CE;
+    crimson:        #8B2F3A;
+    teal:           #2F6F6B;
+
+    /* Applied Colors */
+    background-color: transparent;
+    text-color: @platinum;
+}
+
+window {
+    width: 500px;
+    background-color: @obsidian;
+    border: 2px solid;
+    border-color: @amethyst;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+mainbox {
+    spacing: 15px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @carbon;
+    border-radius: 8px;
+    padding: 12px;
+    spacing: 10px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @amethyst;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @steel;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    spacing: 5px;
+    scrollbar: false;
+}
+
+element {
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @silver;
+}
+
+element selected.normal {
+    background-color: @graphite;
+    text-color: @platinum;
+    border: 1px solid;
+    border-color: @amethyst;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @silver;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 10px 0 0;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+/* Scrollbar (if enabled) */
+scrollbar {
+    width: 4px;
+    handle-color: @amethyst;
+    handle-width: 4px;
+}
+
+/* Message */
+message {
+    background-color: @carbon;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+textbox {
+    text-color: @silver;
+}

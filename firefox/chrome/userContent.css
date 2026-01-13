@@ -1,0 +1,462 @@
+/* =============================================================================
+   Firefox userContent.css - Obsidian · Sapphire · Tyrian Theme
+   =============================================================================
+   
+   This styles Firefox's internal pages (about:*, new tab, etc.)
+   Place this file in the same "chrome" folder as userChrome.css
+   
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   Color Variables
+   ----------------------------------------------------------------------------- */
+:root {
+    /* Core Neutrals */
+    --obsidian: #1B1B1B;
+    --abyss: #161616;
+    --void-black: #0E0E0E;
+    --carbon: #202020;
+    --graphite: #2A2A2A;
+    --slate: #353535;
+    --ash: #474747;
+    --smoke: #5A5A5A;
+    --iron: #7E7E7E;
+
+    /* Text Colors */
+    --platinum: #E5E4E2;
+    --silver: #C6C6C6;
+    --steel: #919191;
+
+    /* Primary Accents */
+    --amethyst: #550255;
+    --tyrian: #791B4D;
+    --sapphire: #0F52BA;
+    --deep-sapphire: #0B3F91;
+
+    /* Highlights & Focus */
+    --gold: #F7E7CE;
+    --pale-gold: #EED9B7;
+
+    /* Semantic */
+    --crimson: #8B2F3A;
+    --teal: #2F6F6B;
+}
+
+/* =============================================================================
+   New Tab Page
+   ============================================================================= */
+@-moz-document url("about:newtab"), url("about:home") {
+    body {
+        background: var(--obsidian) !important;
+    }
+
+    /* Search box */
+    .search-wrapper .search-handoff-button {
+        background: var(--graphite) !important;
+        border: 1px solid var(--ash) !important;
+        border-radius: 8px !important;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .search-wrapper .search-handoff-button:hover {
+        border-color: var(--sapphire) !important;
+    }
+
+    .search-wrapper .search-handoff-button .fake-textbox {
+        color: var(--steel) !important;
+    }
+
+    /* Top Sites */
+    .top-site-outer {
+        background: var(--carbon) !important;
+        border-radius: 8px !important;
+    }
+
+    .top-site-outer:hover {
+        background: var(--graphite) !important;
+    }
+
+    .top-site-outer .title {
+        color: var(--silver) !important;
+    }
+
+    .top-site-outer:hover .title {
+        color: var(--platinum) !important;
+    }
+
+    /* Card backgrounds (highlights, pocket, etc) */
+    .card-outer {
+        background: var(--carbon) !important;
+        border-radius: 8px !important;
+    }
+
+    .card-outer:hover {
+        background: var(--graphite) !important;
+        box-shadow: 0 0 12px rgba(85, 2, 85, 0.2) !important;
+    }
+
+    .card-outer .card-title {
+        color: var(--platinum) !important;
+    }
+
+    .card-outer .card-context {
+        color: var(--steel) !important;
+    }
+
+    /* Section titles */
+    .section-title span {
+        color: var(--sapphire) !important;
+    }
+
+    /* Context menu */
+    .context-menu {
+        background: var(--carbon) !important;
+        border: 1px solid var(--ash) !important;
+        border-radius: 8px !important;
+    }
+
+    .context-menu-item {
+        color: var(--platinum) !important;
+    }
+
+    .context-menu-item:hover {
+        background: var(--amethyst) !important;
+        color: var(--gold) !important;
+    }
+
+    /* Personalize button */
+    .personalize-button {
+        background: var(--carbon) !important;
+        color: var(--silver) !important;
+        border: 1px solid var(--ash) !important;
+    }
+
+    .personalize-button:hover {
+        background: var(--sapphire) !important;
+        color: var(--platinum) !important;
+    }
+}
+
+/* =============================================================================
+   Settings (about:preferences)
+   ============================================================================= */
+@-moz-document url-prefix("about:preferences") {
+    :root {
+        --in-content-page-background: var(--obsidian) !important;
+        --in-content-page-color: var(--platinum) !important;
+        --in-content-box-background: var(--carbon) !important;
+        --in-content-box-background-hover: var(--graphite) !important;
+        --in-content-box-background-active: var(--slate) !important;
+        --in-content-box-border-color: var(--ash) !important;
+        --in-content-button-background: var(--graphite) !important;
+        --in-content-button-background-hover: var(--slate) !important;
+        --in-content-button-background-active: var(--sapphire) !important;
+        --in-content-primary-button-background: var(--sapphire) !important;
+        --in-content-primary-button-background-hover: var(--deep-sapphire) !important;
+        --in-content-link-color: var(--sapphire) !important;
+        --in-content-link-color-hover: var(--gold) !important;
+        --in-content-accent-color: var(--amethyst) !important;
+        --in-content-text-color: var(--platinum) !important;
+    }
+
+    body {
+        background: var(--obsidian) !important;
+        color: var(--platinum) !important;
+    }
+
+    /* Sidebar */
+    .navigation {
+        background: var(--carbon) !important;
+    }
+
+    .category {
+        color: var(--silver) !important;
+        border-radius: 6px !important;
+    }
+
+    .category:hover {
+        background: var(--graphite) !important;
+        color: var(--platinum) !important;
+    }
+
+    .category[selected] {
+        background: var(--amethyst) !important;
+        color: var(--gold) !important;
+    }
+
+    /* Headers */
+    .subcategory,
+    h1,
+    h2,
+    h3 {
+        color: var(--sapphire) !important;
+    }
+
+    /* Text inputs */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+        background: var(--graphite) !important;
+        border: 1px solid var(--ash) !important;
+        border-radius: 4px !important;
+        color: var(--platinum) !important;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    textarea:focus {
+        border-color: var(--sapphire) !important;
+    }
+
+    /* Buttons */
+    button,
+    .button {
+        background: var(--graphite) !important;
+        border: 1px solid var(--ash) !important;
+        color: var(--platinum) !important;
+        border-radius: 4px !important;
+    }
+
+    button:hover,
+    .button:hover {
+        background: var(--slate) !important;
+    }
+
+    button.primary,
+    .button.primary {
+        background: var(--sapphire) !important;
+        border: none !important;
+    }
+
+    button.primary:hover,
+    .button.primary:hover {
+        background: var(--deep-sapphire) !important;
+    }
+
+    /* Checkboxes and radios */
+    checkbox {
+        color: var(--platinum) !important;
+    }
+
+    /* Toggle switches */
+    .toggle-container-with-text .toggle-input:checked~.toggle-display {
+        background: var(--sapphire) !important;
+    }
+
+    /* Cards/groupboxes */
+    groupbox,
+    .card {
+        background: var(--carbon) !important;
+        border: 1px solid var(--ash) !important;
+        border-radius: 8px !important;
+    }
+
+    /* Links */
+    a {
+        color: var(--sapphire) !important;
+    }
+
+    a:hover {
+        color: var(--gold) !important;
+    }
+}
+
+/* =============================================================================
+   Add-ons Page (about:addons)
+   ============================================================================= */
+@-moz-document url-prefix("about:addons") {
+    :root {
+        --in-content-page-background: var(--obsidian) !important;
+        --in-content-page-color: var(--platinum) !important;
+        --in-content-box-background: var(--carbon) !important;
+    }
+
+    body {
+        background: var(--obsidian) !important;
+        color: var(--platinum) !important;
+    }
+
+    /* Sidebar navigation */
+    .sidebar {
+        background: var(--carbon) !important;
+        border-right: 1px solid var(--ash) !important;
+    }
+
+    .sidebar button {
+        color: var(--silver) !important;
+    }
+
+    .sidebar button:hover {
+        background: var(--graphite) !important;
+        color: var(--platinum) !important;
+    }
+
+    .sidebar button[selected] {
+        background: var(--amethyst) !important;
+        color: var(--gold) !important;
+    }
+
+    /* Addon cards */
+    .card {
+        background: var(--carbon) !important;
+        border: 1px solid var(--ash) !important;
+        border-radius: 8px !important;
+    }
+
+    .card:hover {
+        border-color: var(--sapphire) !important;
+    }
+
+    .addon-name {
+        color: var(--platinum) !important;
+    }
+
+    .addon-description {
+        color: var(--silver) !important;
+    }
+
+    /* Enable/disable toggle */
+    .toggle-button[pressed] {
+        background: var(--sapphire) !important;
+    }
+}
+
+/* =============================================================================
+   about:blank and about:privatebrowsing
+   ============================================================================= */
+@-moz-document url("about:blank") {
+    body {
+        background: var(--obsidian) !important;
+    }
+}
+
+@-moz-document url("about:privatebrowsing") {
+    body {
+        background: var(--void-black) !important;
+    }
+
+    .container {
+        color: var(--platinum) !important;
+    }
+
+    .logo-and-wordmark .wordmark {
+        fill: var(--amethyst) !important;
+    }
+
+    .search-handoff-button {
+        background: var(--graphite) !important;
+        border: 1px solid var(--amethyst) !important;
+    }
+
+    .info h1 {
+        color: var(--gold) !important;
+    }
+
+    .info p {
+        color: var(--silver) !important;
+    }
+}
+
+/* =============================================================================
+   Error Pages
+   ============================================================================= */
+@-moz-document url-prefix("about:neterror"), url-prefix("about:certerror") {
+    body {
+        background: var(--obsidian) !important;
+        color: var(--platinum) !important;
+    }
+
+    .title {
+        color: var(--crimson) !important;
+    }
+
+    .error-message {
+        color: var(--silver) !important;
+    }
+
+    button {
+        background: var(--sapphire) !important;
+        color: var(--platinum) !important;
+        border: none !important;
+        border-radius: 4px !important;
+    }
+
+    button:hover {
+        background: var(--deep-sapphire) !important;
+    }
+}
+
+/* =============================================================================
+   about:debugging
+   ============================================================================= */
+@-moz-document url-prefix("about:debugging") {
+    :root {
+        --page-background: var(--obsidian) !important;
+        --box-background: var(--carbon) !important;
+        --text-color: var(--platinum) !important;
+    }
+
+    body {
+        background: var(--obsidian) !important;
+        color: var(--platinum) !important;
+    }
+}
+
+/* =============================================================================
+   PDF Viewer
+   ============================================================================= */
+@-moz-document url-prefix("resource://pdf.js") {
+    body {
+        background: var(--obsidian) !important;
+    }
+
+    #toolbarContainer {
+        background: var(--carbon) !important;
+        border-bottom: 1px solid var(--ash) !important;
+    }
+
+    #sidebarContainer {
+        background: var(--carbon) !important;
+    }
+
+    .toolbarButton,
+    .dropdownToolbarButton {
+        background: var(--graphite) !important;
+        border: 1px solid var(--ash) !important;
+        color: var(--platinum) !important;
+    }
+
+    .toolbarButton:hover,
+    .dropdownToolbarButton:hover {
+        background: var(--slate) !important;
+    }
+
+    #viewerContainer {
+        background: var(--obsidian) !important;
+    }
+}
+
+/* =============================================================================
+   Global Scrollbar Styling for about:* pages
+   ============================================================================= */
+@-moz-document regexp("^about:.*") {
+    * {
+        scrollbar-color: var(--slate) var(--obsidian) !important;
+        scrollbar-width: thin !important;
+    }
+}
+
+/* =============================================================================
+   Selection Styling
+   ============================================================================= */
+::selection {
+    background: var(--sapphire) !important;
+    color: var(--gold) !important;
+}
+
+::-moz-selection {
+    background: var(--sapphire) !important;
+    color: var(--gold) !important;
+}

@@ -1,0 +1,71 @@
+# =============================================================================
+# Yazi Keymap - Obsidian · Sapphire · Tyrian Theme
+# =============================================================================
+#
+# Keybindings for the file manager
+# Documentation: https://yazi-rs.github.io/docs/configuration/keymap
+# =============================================================================
+
+# Default keymaps at: https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/keymap.toml
+# Only customizations are listed here - defaults still apply
+
+[manager]
+prepend_keymap = [
+    # Arrow key navigation (in addition to vim keys)
+    { on = ["<Up>"], run = "arrow -1", desc = "Move up" },
+    { on = ["<Down>"], run = "arrow 1", desc = "Move down" },
+    { on = ["<Left>"], run = "leave", desc = "Go to parent" },
+    { on = ["<Right>"], run = "enter", desc = "Enter directory" },
+
+    # Quick directory jumps
+    { on = ["g", "h"], run = "cd ~", desc = "Go to home" },
+    { on = ["g", "c"], run = "cd ~/.config", desc = "Go to config" },
+    { on = ["g", "d"], run = "cd ~/Downloads", desc = "Go to downloads" },
+    { on = ["g", "p"], run = "cd ~/Projects", desc = "Go to projects" },
+
+    # File operations
+    { on = ["<Delete>"], run = "remove", desc = "Trash selected" },
+    { on = ["<S-Delete>"], run = "remove --permanently", desc = "Delete permanently" },
+
+    # Toggle hidden files
+    { on = ["."], run = "hidden toggle", desc = "Toggle hidden files" },
+
+    # Open in terminal
+    { on = ["T"], run = "shell 'wezterm start --cwd \"$PWD\"' --orphan", desc = "Open terminal here" },
+
+    # Refresh
+    { on = ["<C-r>"], run = "refresh", desc = "Refresh" },
+
+    # Bulk rename
+    { on = ["R"], run = "bulk_rename", desc = "Bulk rename" },
+]
+
+append_keymap = []
+
+[tasks]
+prepend_keymap = []
+append_keymap = []
+
+[pick]
+prepend_keymap = []
+append_keymap = []
+
+[input]
+prepend_keymap = [
+    # Home/End in input fields
+    { on = ["<Home>"], run = "move -999", desc = "Move to start" },
+    { on = ["<End>"], run = "move 999", desc = "Move to end" },
+]
+append_keymap = []
+
+[confirm]
+prepend_keymap = []
+append_keymap = []
+
+[completion]
+prepend_keymap = []
+append_keymap = []
+
+[help]
+prepend_keymap = []
+append_keymap = []

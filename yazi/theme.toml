@@ -1,0 +1,132 @@
+# =============================================================================
+# Yazi Theme - Obsidian · Sapphire · Tyrian Theme
+# =============================================================================
+#
+# Color scheme for the file manager
+# Documentation: https://yazi-rs.github.io/docs/configuration/theme
+# =============================================================================
+
+[manager]
+# Current working directory
+cwd = { fg = "#0F52BA" }  # Sapphire
+
+# Hovered item
+hovered = { fg = "#E5E4E2", bg = "#2A2A2A", bold = true }  # Platinum on Graphite
+preview_hovered = { underline = true }
+
+# Find mode
+find_keyword = { fg = "#F7E7CE", bold = true }      # Champagne Gold
+find_position = { fg = "#550255", italic = true }   # Imperial Amethyst
+
+# Markers (selected, copied, cut)
+marker_copied = { fg = "#2F6F6B", bg = "#2F6F6B" }  # Deep Teal
+marker_cut = { fg = "#8B2F3A", bg = "#8B2F3A" }    # Muted Crimson
+marker_marked = { fg = "#F7E7CE", bg = "#F7E7CE" } # Champagne Gold
+marker_selected = { fg = "#0F52BA", bg = "#0F52BA" } # Sapphire
+
+# Tab bar
+tab_active = { fg = "#E5E4E2", bg = "#550255" }    # Platinum on Amethyst
+tab_inactive = { fg = "#919191", bg = "#202020" }  # Steel on Carbon
+tab_width = 1
+
+# Borders
+border_symbol = "│"
+border_style = { fg = "#474747" }  # Ash
+
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#474747", bg = "#202020" }
+
+# Mode indicator
+mode_normal = { fg = "#1B1B1B", bg = "#0F52BA", bold = true }    # Sapphire
+mode_select = { fg = "#1B1B1B", bg = "#F7E7CE", bold = true }    # Gold
+mode_unset = { fg = "#1B1B1B", bg = "#791B4D", bold = true }     # Tyrian
+
+# Progress bar
+progress_label = { fg = "#E5E4E2", bold = true }
+progress_normal = { fg = "#0F52BA", bg = "#202020" }
+progress_error = { fg = "#8B2F3A", bg = "#202020" }
+
+# Permissions
+permissions_t = { fg = "#0F52BA" }  # Sapphire
+permissions_r = { fg = "#2F6F6B" }  # Deep Teal
+permissions_w = { fg = "#8B2F3A" }  # Muted Crimson
+permissions_x = { fg = "#F7E7CE" }  # Champagne Gold
+permissions_s = { fg = "#919191" }  # Steel
+
+[input]
+border = { fg = "#550255" }         # Imperial Amethyst
+title = { fg = "#E5E4E2" }          # Platinum
+value = { fg = "#C6C6C6" }          # Silver
+selected = { reversed = true }
+
+[confirm]
+border = { fg = "#550255" }         # Imperial Amethyst
+title = { fg = "#E5E4E2" }          # Platinum
+content = { fg = "#C6C6C6" }        # Silver
+list = { fg = "#C6C6C6" }           # Silver
+btn_yes = { bg = "#2F6F6B" }        # Deep Teal
+btn_no = { bg = "#8B2F3A" }         # Muted Crimson
+
+[completion]
+border = { fg = "#550255" }         # Imperial Amethyst
+active = { fg = "#E5E4E2", bg = "#2A2A2A" }
+inactive = { fg = "#919191" }
+
+[tasks]
+border = { fg = "#550255" }         # Imperial Amethyst
+title = { fg = "#E5E4E2" }          # Platinum
+hovered = { underline = true }
+
+[help]
+on = { fg = "#0F52BA" }             # Sapphire
+run = { fg = "#550255" }            # Imperial Amethyst
+desc = { fg = "#919191" }           # Steel
+hovered = { bg = "#2A2A2A", bold = true }
+footer = { fg = "#474747", bg = "#1B1B1B" }
+
+[filetype]
+rules = [
+    # Directories
+    { name = "*/", fg = "#0F52BA", bold = true },  # Sapphire
+
+    # Hidden files
+    { name = ".*", fg = "#919191" },  # Steel
+
+    # Media
+    { mime = "image/*", fg = "#791B4D" },           # Tyrian Rose
+    { mime = "video/*", fg = "#550255", bold = true },  # Imperial Amethyst
+    { mime = "audio/*", fg = "#F7E7CE" },           # Champagne Gold
+
+    # Archives
+    { mime = "application/zip", fg = "#8B2F3A" },   # Muted Crimson
+    { mime = "application/*tar*", fg = "#8B2F3A" }, # Muted Crimson
+    { mime = "application/*zstd", fg = "#8B2F3A" }, # Muted Crimson
+
+    # Documents
+    { mime = "application/pdf", fg = "#8B2F3A" },   # Muted Crimson
+    { mime = "text/*", fg = "#2F6F6B" },            # Deep Teal
+    { mime = "application/json", fg = "#2F6F6B" }, # Deep Teal
+
+    # Executables
+    { name = "*.sh", fg = "#2F6F6B", bold = true },
+    { name = "*.py", fg = "#2F6F6B" },
+    { name = "*.js", fg = "#F7E7CE" },
+    { name = "*.ts", fg = "#0F52BA" },
+    { name = "*.rs", fg = "#791B4D" },
+    { name = "*.go", fg = "#0F52BA" },
+
+    # Config files
+    { name = "*.conf", fg = "#919191" },
+    { name = "*.toml", fg = "#919191" },
+    { name = "*.yaml", fg = "#919191" },
+    { name = "*.yml", fg = "#919191" },
+]
+
+[icon]
+globs = []
+dirs = []
+files = []
+exts = []
+conds = []

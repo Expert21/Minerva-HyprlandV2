@@ -1,0 +1,542 @@
+/* =============================================================================
+   Firefox userChrome.css - Obsidian · Sapphire · Tyrian Theme
+   =============================================================================
+   
+   Installation:
+   1. Open Firefox and go to: about:config
+   2. Search for: toolkit.legacyUserProfileCustomizations.stylesheets
+   3. Set to: true
+   4. Find your Firefox profile: about:profiles → "Root Directory"
+   5. Create a "chrome" folder inside the profile directory
+   6. Place this file (userChrome.css) inside the chrome folder
+   7. Restart Firefox
+   
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   Color Variables
+   ----------------------------------------------------------------------------- */
+:root {
+    /* Core Neutrals */
+    --obsidian: #1B1B1B;
+    --abyss: #161616;
+    --void-black: #0E0E0E;
+    --carbon: #202020;
+    --graphite: #2A2A2A;
+    --slate: #353535;
+    --ash: #474747;
+    --smoke: #5A5A5A;
+    --iron: #7E7E7E;
+
+    /* Text Colors */
+    --platinum: #E5E4E2;
+    --silver: #C6C6C6;
+    --steel: #919191;
+
+    /* Primary Accents */
+    --amethyst: #550255;
+    --tyrian: #791B4D;
+    --sapphire: #0F52BA;
+    --deep-sapphire: #0B3F91;
+
+    /* Highlights & Focus */
+    --gold: #F7E7CE;
+    --pale-gold: #EED9B7;
+
+    /* Semantic */
+    --crimson: #8B2F3A;
+    --teal: #2F6F6B;
+}
+
+/* -----------------------------------------------------------------------------
+   Main Browser Window
+   ----------------------------------------------------------------------------- */
+#main-window,
+#navigator-toolbox {
+    background: var(--obsidian) !important;
+}
+
+/* Toolbar Background */
+#nav-bar,
+#PersonalToolbar,
+#toolbar-menubar {
+    background: var(--carbon) !important;
+    border-bottom: 1px solid var(--ash) !important;
+}
+
+/* Tab Bar Background */
+#TabsToolbar {
+    background: var(--abyss) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Tabs Styling
+   ----------------------------------------------------------------------------- */
+/* All tabs base style */
+.tabbrowser-tab {
+    background: var(--carbon) !important;
+    border-radius: 8px 8px 0 0 !important;
+    margin-inline: 2px !important;
+    min-height: 36px !important;
+}
+
+/* Inactive tab */
+.tabbrowser-tab:not([selected="true"]) {
+    background: var(--graphite) !important;
+    opacity: 0.8;
+}
+
+.tabbrowser-tab:not([selected="true"]):hover {
+    background: var(--slate) !important;
+    opacity: 1;
+}
+
+/* Active/Selected tab */
+.tabbrowser-tab[selected="true"] {
+    background: linear-gradient(180deg, var(--amethyst) 0%, var(--tyrian) 100%) !important;
+    box-shadow: 0 0 12px rgba(85, 2, 85, 0.4) !important;
+}
+
+/* Tab text */
+.tab-label {
+    color: var(--platinum) !important;
+    font-weight: 500 !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-label {
+    color: var(--gold) !important;
+    text-shadow: 0 0 8px rgba(247, 231, 206, 0.3) !important;
+}
+
+/* Tab close button */
+.tab-close-button {
+    fill: var(--steel) !important;
+    border-radius: 50% !important;
+}
+
+.tab-close-button:hover {
+    background: var(--crimson) !important;
+    fill: var(--platinum) !important;
+}
+
+/* New tab button */
+#tabs-newtab-button,
+#new-tab-button {
+    fill: var(--sapphire) !important;
+}
+
+#tabs-newtab-button:hover,
+#new-tab-button:hover {
+    fill: var(--gold) !important;
+    background: var(--slate) !important;
+    border-radius: 4px !important;
+}
+
+/* Tab loading indicator */
+.tab-throbber {
+    fill: var(--sapphire) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   URL Bar / Address Bar
+   ----------------------------------------------------------------------------- */
+#urlbar,
+#searchbar {
+    background: var(--graphite) !important;
+    border: 1px solid var(--ash) !important;
+    border-radius: 8px !important;
+    color: var(--platinum) !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+#urlbar:hover,
+#searchbar:hover {
+    border-color: var(--sapphire) !important;
+}
+
+#urlbar[focused="true"],
+#searchbar[focused="true"] {
+    border-color: var(--amethyst) !important;
+    box-shadow: 0 0 8px rgba(85, 2, 85, 0.4), inset 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* URL bar text */
+#urlbar-input {
+    color: var(--platinum) !important;
+}
+
+/* URL bar selection */
+#urlbar-input::selection {
+    background: var(--sapphire) !important;
+    color: var(--gold) !important;
+}
+
+/* URL bar placeholder */
+#urlbar-input::placeholder {
+    color: var(--steel) !important;
+}
+
+/* URL bar identity icon (lock icon) */
+#identity-icon-box {
+    fill: var(--sapphire) !important;
+}
+
+/* Secure connection */
+#identity-icon[pageproxystate="valid"][connection="secure"] {
+    fill: var(--teal) !important;
+}
+
+/* Insecure connection */
+#identity-icon[pageproxystate="valid"][connection="insecure"] {
+    fill: var(--crimson) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Toolbar Buttons
+   ----------------------------------------------------------------------------- */
+/* All toolbar buttons */
+toolbarbutton {
+    fill: var(--silver) !important;
+    border-radius: 6px !important;
+}
+
+toolbarbutton:hover {
+    background: var(--slate) !important;
+    fill: var(--platinum) !important;
+}
+
+toolbarbutton:active,
+toolbarbutton[checked="true"] {
+    background: var(--amethyst) !important;
+    fill: var(--gold) !important;
+}
+
+/* Back/Forward buttons */
+#back-button,
+#forward-button {
+    fill: var(--sapphire) !important;
+}
+
+#back-button:hover,
+#forward-button:hover {
+    fill: var(--gold) !important;
+    background: var(--sapphire) !important;
+}
+
+/* Reload button */
+#reload-button {
+    fill: var(--teal) !important;
+}
+
+#reload-button:hover {
+    fill: var(--gold) !important;
+    background: var(--teal) !important;
+}
+
+/* Stop button */
+#stop-button {
+    fill: var(--crimson) !important;
+}
+
+/* Home button */
+#home-button {
+    fill: var(--tyrian) !important;
+}
+
+/* Downloads button */
+#downloads-button {
+    fill: var(--sapphire) !important;
+}
+
+/* Menu button (hamburger) */
+#PanelUI-menu-button {
+    fill: var(--amethyst) !important;
+}
+
+#PanelUI-menu-button:hover {
+    background: var(--amethyst) !important;
+    fill: var(--gold) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Bookmarks Bar
+   ----------------------------------------------------------------------------- */
+#PersonalToolbar {
+    background: var(--carbon) !important;
+    padding: 4px 0 !important;
+}
+
+/* Bookmark items */
+#PlacesToolbarItems .bookmark-item {
+    color: var(--silver) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+#PlacesToolbarItems .bookmark-item:hover {
+    background: var(--slate) !important;
+    color: var(--platinum) !important;
+}
+
+/* Bookmark folders */
+#PlacesToolbarItems .bookmark-item[container="true"] {
+    color: var(--sapphire) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Context Menus
+   ----------------------------------------------------------------------------- */
+menupopup,
+panel {
+    --panel-background: var(--carbon) !important;
+    --panel-color: var(--platinum) !important;
+    --panel-border-color: var(--ash) !important;
+    background: var(--carbon) !important;
+    color: var(--platinum) !important;
+    border: 1px solid var(--ash) !important;
+    border-radius: 8px !important;
+}
+
+menuitem,
+menu {
+    color: var(--platinum) !important;
+    border-radius: 4px !important;
+}
+
+menuitem:hover,
+menu:hover,
+menuitem[_moz-menuactive="true"],
+menu[_moz-menuactive="true"] {
+    background: var(--amethyst) !important;
+    color: var(--gold) !important;
+}
+
+menuseparator {
+    border-color: var(--ash) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Sidebar
+   ----------------------------------------------------------------------------- */
+#sidebar-box {
+    background: var(--obsidian) !important;
+    border-right: 1px solid var(--ash) !important;
+}
+
+#sidebar-header {
+    background: var(--carbon) !important;
+    border-bottom: 1px solid var(--ash) !important;
+    color: var(--platinum) !important;
+}
+
+#sidebar {
+    background: var(--obsidian) !important;
+    color: var(--platinum) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Find Bar
+   ----------------------------------------------------------------------------- */
+findbar {
+    background: var(--carbon) !important;
+    border-top: 1px solid var(--ash) !important;
+    color: var(--platinum) !important;
+}
+
+findbar textbox {
+    background: var(--graphite) !important;
+    border: 1px solid var(--ash) !important;
+    color: var(--platinum) !important;
+    border-radius: 4px !important;
+}
+
+findbar textbox:focus {
+    border-color: var(--sapphire) !important;
+}
+
+/* Match highlight */
+.findbar-find-status {
+    color: var(--sapphire) !important;
+}
+
+/* No matches */
+findbar[status="notfound"] .findbar-textbox {
+    background: var(--crimson) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Scrollbars
+   ----------------------------------------------------------------------------- */
+scrollbar {
+    background: var(--obsidian) !important;
+}
+
+scrollbar thumb {
+    background: var(--slate) !important;
+    border-radius: 4px !important;
+}
+
+scrollbar thumb:hover {
+    background: var(--smoke) !important;
+}
+
+scrollbar thumb:active {
+    background: var(--sapphire) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Notification Bars
+   ----------------------------------------------------------------------------- */
+notification {
+    background: var(--carbon) !important;
+    border-bottom: 1px solid var(--ash) !important;
+    color: var(--platinum) !important;
+}
+
+.notification-button {
+    background: var(--sapphire) !important;
+    color: var(--platinum) !important;
+    border-radius: 4px !important;
+}
+
+.notification-button:hover {
+    background: var(--deep-sapphire) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Autocomplete / URL Suggestions
+   ----------------------------------------------------------------------------- */
+#PopupAutoComplete,
+#PopupSearchAutoComplete,
+.autocomplete-richlistbox {
+    background: var(--carbon) !important;
+    border: 1px solid var(--ash) !important;
+    border-radius: 8px !important;
+}
+
+.autocomplete-richlistitem {
+    color: var(--platinum) !important;
+    padding: 8px !important;
+}
+
+.autocomplete-richlistitem:hover,
+.autocomplete-richlistitem[selected] {
+    background: var(--amethyst) !important;
+    color: var(--gold) !important;
+}
+
+/* URL in suggestions */
+.ac-url {
+    color: var(--sapphire) !important;
+}
+
+/* Title in suggestions */
+.ac-title {
+    color: var(--platinum) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Extensions Panel
+   ----------------------------------------------------------------------------- */
+#unified-extensions-panel {
+    background: var(--carbon) !important;
+    border: 1px solid var(--ash) !important;
+}
+
+.unified-extensions-item {
+    background: transparent !important;
+    border-radius: 6px !important;
+}
+
+.unified-extensions-item:hover {
+    background: var(--slate) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Private Browsing Indicator
+   ----------------------------------------------------------------------------- */
+#private-browsing-indicator-with-label {
+    background: var(--amethyst) !important;
+    color: var(--gold) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Loading Progress Bar
+   ----------------------------------------------------------------------------- */
+#tabbrowser-tabpanels {
+    background: var(--obsidian) !important;
+}
+
+/* Tab loading progress */
+.tab-loading-burst {
+    background: linear-gradient(90deg, transparent, var(--sapphire), transparent) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Pinned Tabs
+   ----------------------------------------------------------------------------- */
+.tabbrowser-tab[pinned] {
+    min-width: 42px !important;
+}
+
+.tabbrowser-tab[pinned][selected="true"] {
+    background: var(--sapphire) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Audio Playing Indicator
+   ----------------------------------------------------------------------------- */
+.tab-icon-overlay[indicator-replaces-favicon],
+.tab-icon-overlay[soundplaying] {
+    fill: var(--sapphire) !important;
+}
+
+.tab-icon-overlay[muted] {
+    fill: var(--crimson) !important;
+}
+
+/* -----------------------------------------------------------------------------
+   Window Controls (Linux/Wayland)
+   ----------------------------------------------------------------------------- */
+.titlebar-buttonbox-container {
+    background: transparent !important;
+}
+
+.titlebar-button {
+    fill: var(--silver) !important;
+    border-radius: 50% !important;
+    padding: 6px !important;
+}
+
+.titlebar-button:hover {
+    background: var(--slate) !important;
+}
+
+.titlebar-close:hover {
+    background: var(--crimson) !important;
+    fill: var(--platinum) !important;
+}
+
+.titlebar-min:hover {
+    background: var(--sapphire) !important;
+}
+
+.titlebar-max:hover,
+.titlebar-restore:hover {
+    background: var(--teal) !important;
+}
+
+/* =============================================================================
+   Animations & Transitions
+   ============================================================================= */
+* {
+    transition: background 0.15s ease, border-color 0.15s ease, fill 0.15s ease, color 0.15s ease !important;
+}
+
+/* Disable transitions for things that shouldn't animate */
+scrollbar,
+scrollbar * {
+    transition: none !important;
+}
