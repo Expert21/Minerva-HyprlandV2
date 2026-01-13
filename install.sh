@@ -4,7 +4,8 @@
 # Obsidian · Sapphire · Tyrian Hyprland Rice
 # =============================================================================
 
-set -e
+set -euo pipefail
+IFS=$'\n\t'
 
 # Colors for output
 RED='\033[0;31m'
@@ -19,6 +20,7 @@ NC='\033[0m' # No Color
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="$HOME/.config"
 BACKUP_DIR="$HOME/.config-backup-$(date +%Y%m%d-%H%M%S)"
+
 
 # -----------------------------------------------------------------------------
 # Helper Functions
@@ -46,16 +48,32 @@ print_error() {
     echo -e "${RED}✗${NC} $1"
 }
 
+# -----------------------------------------------------------------------------
+# System Checks (must be after helper functions)
+# -----------------------------------------------------------------------------
+
+command -v pacman >/dev/null 2>&1 || {
+    print_error "pacman not found. This installer is for Arch-based distros."
+    exit 1
+}
+
+command -v sudo >/dev/null 2>&1 || {
+    print_error "sudo not found. Install sudo or run as root (not recommended)."
+    exit 1
+}
+
 backup_if_exists() {
-    local path="$1"
-    if [[ -e "$path" && ! -L "$path" ]]; then
-        mkdir -p "$BACKUP_DIR"
-        local name=$(basename "$path")
-        print_warning "Backing up existing $name to $BACKUP_DIR/"
-        mv "$path" "$BACKUP_DIR/$name"
-    elif [[ -L "$path" ]]; then
-        rm "$path"
-    fi
+  local path="$1"
+  if [[ -e "$path" && ! -L "$path" ]]; then
+    mkdir -p "$BACKUP_DIR"
+    local rel="${path#$HOME/}"                 # strip $HOME/ prefix
+    local dest="$BACKUP_DIR/$rel"
+    mkdir -p "$(dirname "$dest")"
+    print_warning "Backing up existing $rel to $dest"
+    mv "$path" "$dest"
+  elif [[ -L "$path" ]]; then
+    rm "$path"
+  fi
 }
 
 create_symlink() {

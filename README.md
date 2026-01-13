@@ -6,6 +6,8 @@ A luxurious dark Hyprland rice with royal purple, sapphire blue, and champagne g
 ![Arch Linux](https://img.shields.io/badge/Arch-Linux-1793D1?style=flat-square&logo=arch-linux)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
+## Made for Arch Linux
+
 ## 🎨 Color Palette
 
 | Role | Name | Hex |
