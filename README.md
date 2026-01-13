@@ -52,13 +52,16 @@ A luxurious dark Hyprland rice with royal purple, sapphire blue, and champagne g
 
 ```
 Minerva-From-Scratch/
+├── colors.sh                  # 🎨 MASTER COLOR FILE (edit this!)
+├── generate-themes.sh         # Propagates colors to all configs
+├── install.sh                 # Deployment script
 ├── hypr/
 │   ├── hyprland.conf          # Main entry point
-│   ├── master.conf            # Primary settings (edit this!)
+│   ├── master.conf            # Primary settings
 │   ├── hypridle.conf          # Idle behavior
 │   ├── hyprlock.conf          # Lock screen config
 │   ├── scheme/
-│   │   └── colors.conf        # Color palette variables
+│   │   └── colors.conf        # Auto-generated from colors.sh
 │   └── hyprland/
 │       ├── animations.conf    # Animation curves
 │       ├── decoration.conf    # Borders, shadows, blur
@@ -72,7 +75,7 @@ Minerva-From-Scratch/
 │       └── rules.conf         # Window rules
 ├── waybar/
 │   ├── config                 # Waybar modules
-│   └── style.css              # Waybar theme
+│   └── style.css              # Auto-generated colors
 ├── dunst/
 │   └── dunstrc                # Notification styling
 ├── rofi/
@@ -159,10 +162,27 @@ These are configured separately:
 - `hypr/hyprlock.conf` — Lock screen appearance
 - `hypr/hypridle.conf` — Timeout behaviors
 
-### Colors
+### Colors — Universal Theme System
 
-All colors are defined in `hypr/scheme/colors.conf` as Hyprland variables.
-Other configs reference these colors for consistency.
+All colors are defined in **one place**: `colors.sh`
+
+```bash
+# Edit the master color file
+nano colors.sh
+
+# Regenerate all configs
+./generate-themes.sh
+```
+
+The generator updates:
+- `hypr/scheme/colors.conf` — Hyprland variables
+- `waybar/style.css` — GTK color definitions
+- `firefox/chrome/*.css` — CSS custom properties
+- `dunst/dunstrc` — Notification colors
+- `rofi/config.rasi` — Launcher theme
+- `wezterm/wezterm.lua` — Terminal colors
+- `micro/colorschemes/obsidian-tyrian.micro` — Editor theme
+- `yazi/theme.toml` — File manager colors
 
 ## ⌨️ Keybindings
 

@@ -1,167 +1,28 @@
 /* =============================================================================
-   Waybar Styles - Obsidian · Sapphire · Tyrian Theme
-   =============================================================================
-   
-   Styling for the Waybar status bar
-   Documentation: https://github.com/Alexays/Waybar/wiki/Styling
+   Minerva Color Variables - Auto-generated from colors.sh
    ============================================================================= */
+@define-color base #1B1B1B;
+@define-color mantle #161616;
+@define-color crust #0E0E0E;
+@define-color surface #202020;
+@define-color surface-elevated #2A2A2A;
+@define-color surface-highlight #353535;
+@define-color border #474747;
+@define-color overlay #5A5A5A;
+@define-color overlay-strong #7E7E7E;
 
-/* =============================================================================
-   GLOBAL
-   ============================================================================= */
+@define-color text-primary #E5E4E2;
+@define-color text-secondary #C6C6C6;
+@define-color text-muted #919191;
 
-* {
-    font-family: "JetBrains Mono", sans-serif;
-    font-size: 13px;
-    min-height: 0;
-}
+@define-color primary-accent #550255;
+@define-color accent-hover #791B4D;
+@define-color secondary-accent #0F52BA;
+@define-color accent-soft #0B3F91;
 
-window#waybar {
-    background-color: rgba(27, 27, 27, 0.9);
-    /* Obsidian with transparency */
-    border-radius: 10px;
-    border: 1px solid #474747;
-    /* Ash */
-    color: #E5E4E2;
-    /* Platinum */
-}
+@define-color focus #F7E7CE;
+@define-color active-glow #EED9B7;
 
-/* =============================================================================
-   WORKSPACES
-   ============================================================================= */
+@define-color error #8B2F3A;
+@define-color success #2F6F6B;
 
-#workspaces {
-    background-color: #202020;
-    /* Carbon */
-    border-radius: 8px;
-    padding: 0 5px;
-    margin: 5px;
-}
-
-#workspaces button {
-    color: #919191;
-    /* Steel */
-    padding: 0 8px;
-    margin: 3px 2px;
-    border-radius: 6px;
-    background-color: transparent;
-    border: none;
-    transition: all 0.2s ease;
-}
-
-#workspaces button:hover {
-    background-color: #2A2A2A;
-    /* Graphite */
-    color: #C6C6C6;
-    /* Silver */
-}
-
-#workspaces button.active {
-    background-color: #550255;
-    /* Imperial Amethyst */
-    color: #E5E4E2;
-    /* Platinum */
-}
-
-#workspaces button.urgent {
-    background-color: #8B2F3A;
-    /* Muted Crimson */
-    color: #E5E4E2;
-    /* Platinum */
-}
-
-/* =============================================================================
-   WINDOW TITLE
-   ============================================================================= */
-
-#window {
-    color: #C6C6C6;
-    /* Silver */
-    padding: 0 15px;
-}
-
-/* =============================================================================
-   RIGHT SIDE MODULES
-   ============================================================================= */
-
-#clock,
-#network,
-#pulseaudio,
-#tray,
-#submap {
-    background-color: #202020;
-    /* Carbon */
-    padding: 5px 12px;
-    margin: 5px 3px;
-    border-radius: 8px;
-}
-
-/* Clock */
-#clock {
-    color: #F7E7CE;
-    /* Champagne Gold */
-}
-
-/* Network */
-#network {
-    color: #0F52BA;
-    /* Sapphire */
-}
-
-#network.disconnected {
-    color: #8B2F3A;
-    /* Muted Crimson */
-}
-
-/* Audio */
-#pulseaudio {
-    color: #2F6F6B;
-    /* Deep Teal */
-}
-
-#pulseaudio.muted {
-    color: #919191;
-    /* Steel */
-}
-
-/* Submap indicator */
-#submap {
-    background-color: #550255;
-    /* Imperial Amethyst */
-    color: #E5E4E2;
-    /* Platinum */
-}
-
-/* Tray */
-#tray {
-    padding: 5px 8px;
-}
-
-#tray>.passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray>.needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #8B2F3A;
-    /* Muted Crimson */
-    border-radius: 6px;
-}
-
-/* =============================================================================
-   TOOLTIPS
-   ============================================================================= */
-
-tooltip {
-    background-color: #161616;
-    /* Abyss */
-    border: 1px solid #550255;
-    /* Imperial Amethyst */
-    border-radius: 8px;
-}
-
-tooltip label {
-    color: #E5E4E2;
-    /* Platinum */
-    padding: 5px;
-}

@@ -22,7 +22,7 @@
     padding = 15
     horizontal_padding = 15
     frame_width = 2
-    frame_color = "#550255"             # Imperial Amethyst
+    frame_color = "#474747"             # Imperial Amethyst
     separator_height = 2
     separator_color = frame
 
@@ -75,21 +75,21 @@
 
 [urgency_low]
     background = "#202020"              # Carbon
-    foreground = "#919191"              # Steel
+    foreground = "#E5E4E2"              # Steel
     frame_color = "#474747"             # Ash
     timeout = 5
     highlight = "#0F52BA"               # Sapphire
 
 [urgency_normal]
-    background = "#1B1B1B"              # Obsidian
+    background = "#202020"              # Obsidian
     foreground = "#E5E4E2"              # Platinum
-    frame_color = "#550255"             # Imperial Amethyst
+    frame_color = "#474747"             # Imperial Amethyst
     timeout = 10
     highlight = "#0F52BA"               # Sapphire
 
 [urgency_critical]
-    background = "#1B1B1B"              # Obsidian
+    background = "#202020"              # Obsidian
     foreground = "#E5E4E2"              # Platinum
-    frame_color = "#8B2F3A"             # Muted Crimson
+    frame_color = "#474747"             # Muted Crimson
     timeout = 0                         # Don't auto-dismiss
     highlight = "#8B2F3A"               # Muted Crimson
