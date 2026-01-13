@@ -225,8 +225,6 @@ check_dependencies() {
         # Screenshot
         "hyprshot"
         "swappy"
-        "grim"
-        "slurp"
         
         # Clipboard
         "wl-clipboard"
